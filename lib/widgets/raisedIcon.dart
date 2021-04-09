@@ -4,13 +4,16 @@ class raisedIcon extends StatelessWidget {
   String text;
   Icon iconn;
   Color colour;
-  raisedIcon({@required this.text, this.iconn, this.colour});
+  void Function() funn;
+  raisedIcon({@required this.text, this.iconn, this.colour, this.funn});
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () {
-        print("haeeeo");
-      },
+      onPressed: funn != null
+          ? funn
+          : () {
+              print("function");
+            },
       child: Container(
         height: 70,
         width: 120,
