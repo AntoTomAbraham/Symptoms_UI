@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Helper.dart';
+import 'package:flutter_app/Screen/diseasePage.dart';
+import 'package:flutter_app/provider/providerclass.dart';
+import 'package:provider/provider.dart';
 
 class TopsearchBar extends StatefulWidget {
   @override
@@ -6,6 +10,34 @@ class TopsearchBar extends StatefulWidget {
 }
 
 class _TopsearchBarState extends State<TopsearchBar> {
+  int s1 = 0;
+  // ignore: missing_return
+  String searchcontroller() {
+    if (Provider.of<Providerclass>(context, listen: true).sugg2 == 1 &&
+        Provider.of<Providerclass>(context, listen: true).sugg1 == 1) {
+      setState(() {
+        s1 = 1;
+      });
+      return "fatique and vomiting";
+    } else if (Provider.of<Providerclass>(context, listen: true).sugg2 == 1) {
+      setState(() {
+        s1 = 2;
+      });
+      return "Vomiting";
+    } else if (Provider.of<Providerclass>(context, listen: false).sugg1 == 1) {
+      setState(() {
+        s1 = 3;
+      });
+      return "Fatique";
+    } else if (Provider.of<Providerclass>(context, listen: true).sugg2 == 0 &&
+        Provider.of<Providerclass>(context, listen: true).sugg1 == 0) {
+      setState(() {
+        s1 = 0;
+      });
+      return "";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +66,7 @@ class _TopsearchBarState extends State<TopsearchBar> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              controller: TextEditingController(),
+              controller: TextEditingController(text: searchcontroller()),
               decoration: InputDecoration(
                 hintText: " 🔍 Search Symptoms ",
                 enabledBorder: OutlineInputBorder(
@@ -60,7 +92,25 @@ class _TopsearchBarState extends State<TopsearchBar> {
                   height: 30,
                   child: RaisedButton(
                     onPressed: () {
-                      print("haeeeo");
+                      if (s1 == 1) {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DiseasePage(
+                            data: vomiting,
+                          ),
+                        ));
+                      } else if (s1 == 2) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DiseasePage(
+                                data: vomiting,
+                              ),
+                            ));
+                      } else if (s1 == 3) {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DiseasePage(),
+                        ));
+                      }
                     },
                     child: Text(
                       "Submit",
@@ -68,9 +118,10 @@ class _TopsearchBarState extends State<TopsearchBar> {
                     ),
                     color: Colors.pink[100],
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    )),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30),
+                      ),
+                    ),
                   ),
                 ),
               ),

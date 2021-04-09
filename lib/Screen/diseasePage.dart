@@ -8,6 +8,8 @@ import 'package:flutter_app/widgets/radioSection.dart';
 import 'package:flutter_app/widgets/raisedIcon.dart';
 
 class DiseasePage extends StatelessWidget {
+  List data;
+  DiseasePage({this.data});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

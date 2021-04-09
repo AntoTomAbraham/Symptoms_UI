@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Screen/diseasePage.dart';
+import 'package:flutter_app/provider/providerclass.dart';
 import 'package:flutter_app/widgets/suggestionContainer.dart';
+import 'package:provider/provider.dart';
 
 class SuggestionBox extends StatelessWidget {
   @override
@@ -29,15 +32,35 @@ class SuggestionBox extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                suggestionContainer(
-                  disease: "Fatique",
-                  imageaddress:
-                      "https://www.pyroenergen.com/articles09/images/fatigue.gif",
+                GestureDetector(
+                  onTap: () {
+                    Provider.of<Providerclass>(context, listen: false)
+                        .changeSugg1();
+                  },
+                  onDoubleTap: () {
+                    Provider.of<Providerclass>(context, listen: false)
+                        .changebackSugg1();
+                  },
+                  child: suggestionContainer(
+                    disease: "Fatique",
+                    imageaddress:
+                        "https://www.pyroenergen.com/articles09/images/fatigue.gif",
+                  ),
                 ),
-                suggestionContainer(
-                  disease: "Vomiting",
-                  imageaddress:
-                      "https://tse1.mm.bing.net/th?id=OIP.p_V4yyA8gsCcjKh48C-8dAHaH9&pid=Api&P=0&w=300&h=300",
+                GestureDetector(
+                  onTap: () {
+                    Provider.of<Providerclass>(context, listen: false)
+                        .changeSugg2();
+                  },
+                  onDoubleTap: () {
+                    Provider.of<Providerclass>(context, listen: false)
+                        .changebackSugg2();
+                  },
+                  child: suggestionContainer(
+                    disease: "Vomiting",
+                    imageaddress:
+                        "https://tse1.mm.bing.net/th?id=OIP.p_V4yyA8gsCcjKh48C-8dAHaH9&pid=Api&P=0&w=300&h=300",
+                  ),
                 ),
               ],
             ),
