@@ -8,6 +8,7 @@ class DiseasepageAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
+        //functionalities cane added to make IconButton attractive
         IconButton(
           icon: Icon(iconn == null ? Icons.arrow_back : iconn),
           onPressed: () {

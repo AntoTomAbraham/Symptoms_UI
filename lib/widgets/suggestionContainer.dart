@@ -6,6 +6,7 @@ class suggestionContainer extends StatelessWidget {
   suggestionContainer({this.imageaddress, this.disease});
   @override
   Widget build(BuildContext context) {
+    //Color of the container can be changed when it is selected
     return Container(
       height: 150,
       width: 100,

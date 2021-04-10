@@ -60,8 +60,7 @@ class _diseasebuttonSectionState extends State<diseasebuttonSection> {
                   colour: Colors.green[400],
                   funn: () async {
                     await postData().then((value) => print(value));
-                  },
-                )
+                  })
               : raisedIcon(
                   text: "Next",
                   colour: Colors.green[400],
@@ -73,6 +72,7 @@ class _diseasebuttonSectionState extends State<diseasebuttonSection> {
                             )));
                   },
                 ),
+          //Buttons onclick properties can be modified , splashcolor can be implemented to make it attractive
         ],
       ),
     );

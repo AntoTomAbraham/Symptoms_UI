@@ -22,7 +22,7 @@ class diseasecomments extends StatelessWidget {
             ),
           ),
         ),
-        diseasepagetextfield()
+        diseasepagetextfield() //textfield can be some more bigger
       ],
     );
   }
