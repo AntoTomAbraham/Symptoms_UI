@@ -9,6 +9,7 @@ class diseasebuttonSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 112,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -39,6 +40,7 @@ class diseasebuttonSection extends StatelessWidget {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => DiseasePage(
                               data: d2,
+                              a: false,
                             )));
                   },
                 ),

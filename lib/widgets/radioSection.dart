@@ -6,19 +6,26 @@ class radioSection extends StatefulWidget {
   String data1;
   String data2;
   String data3;
+  bool val;
   radioSection({
     Key key,
+    this.val,
     @required this.data1,
     @required this.data2,
     @required this.data3,
   }) : super(key: key);
   @override
-  _radioSectionState createState() =>
-      _radioSectionState(d1: this.data1, d2: this.data2, d3: this.data3);
+  _radioSectionState createState() => _radioSectionState(
+        d1: this.data1,
+        d2: this.data2,
+        d3: this.data3,
+        aa: this.val,
+      );
 }
 
 class _radioSectionState extends State<radioSection> {
   int selectedradio;
+  bool aa;
   String d1;
   String d2;
   String d3;
@@ -36,7 +43,7 @@ class _radioSectionState extends State<radioSection> {
   }
 
   List obj;
-  _radioSectionState({this.d1, this.d2, this.d3});
+  _radioSectionState({this.d1, this.d2, this.d3, this.aa});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -52,6 +59,11 @@ class _radioSectionState extends State<radioSection> {
               groupValue: selectedradio,
               onChanged: (val) {
                 selectradio(val);
+                aa == true
+                    ? Provider.of<Providerclass>(context, listen: false)
+                        .vomitIncre(val)
+                    : Provider.of<Providerclass>(context, listen: false)
+                        .fatiIncre(val);
               },
               title: Row(
                 children: <Widget>[
@@ -66,6 +78,11 @@ class _radioSectionState extends State<radioSection> {
               groupValue: selectedradio,
               onChanged: (val) {
                 selectradio(val);
+                aa == true
+                    ? Provider.of<Providerclass>(context, listen: false)
+                        .vomitIncre(val)
+                    : Provider.of<Providerclass>(context, listen: false)
+                        .fatiIncre(val);
               },
               title: Row(
                 children: <Widget>[Text(d2)],
@@ -77,8 +94,11 @@ class _radioSectionState extends State<radioSection> {
               groupValue: selectedradio,
               onChanged: (val) {
                 selectradio(val);
-                Provider.of<Providerclass>(context, listen: false)
-                    .fatiIncre(val);
+                aa == true
+                    ? Provider.of<Providerclass>(context, listen: false)
+                        .vomitIncre(val)
+                    : Provider.of<Providerclass>(context, listen: false)
+                        .fatiIncre(val);
               },
               title: Row(
                 children: <Widget>[Text(d3)],

@@ -1,27 +1,31 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Home.dart';
 import 'package:flutter_app/Screen/diseasePage.dart';
 
 class bottomIcon extends StatelessWidget {
   IconData icon;
   String text;
-  bottomIcon({@required this.icon, @required this.text});
+  Color home;
+  Void Function() funn;
+  bottomIcon({
+    @required this.icon,
+    @required this.text,
+    this.home,
+    this.funn,
+  });
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => DiseasePage(),
-            ),
-          );
-        },
+        onTap: funn == null ? null : funn,
         child: Column(
           children: <Widget>[
             Icon(
               icon,
-              color: Color(0xff08233D),
+              color: home == null ? Color(0xff08233D) : home,
             ),
             Text(
               text,

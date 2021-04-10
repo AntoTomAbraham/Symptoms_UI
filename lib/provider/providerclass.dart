@@ -8,12 +8,14 @@ class Providerclass with ChangeNotifier {
   void fatiIncre(int data) {
     fati.clear();
     fati.add(data);
+    print(fati);
     notifyListeners();
   }
 
   void vomitIncre(int data) {
     vomi.clear();
     vomi.add(data);
+    print(vomi);
     notifyListeners();
   }
 

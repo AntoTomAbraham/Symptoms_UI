@@ -97,6 +97,7 @@ class _TopsearchBarState extends State<TopsearchBar> {
                           builder: (context) => DiseasePage(
                             data: vomiting,
                             dataA: fatique,
+                            a: true,
                           ),
                         ));
                       } else if (s1 == 2) {
@@ -105,6 +106,7 @@ class _TopsearchBarState extends State<TopsearchBar> {
                             MaterialPageRoute(
                               builder: (context) => DiseasePage(
                                 data: vomiting,
+                                a: false,
                               ),
                             ));
                       } else if (s1 == 3) {
