@@ -47,6 +47,7 @@ class SuggestionBox extends StatelessWidget {
                         "https://www.pyroenergen.com/articles09/images/fatigue.gif",
                   ),
                 ),
+                //a Boxshadow with elevation can be implemented around container
                 GestureDetector(
                   onTap: () {
                     Provider.of<Providerclass>(context, listen: false)

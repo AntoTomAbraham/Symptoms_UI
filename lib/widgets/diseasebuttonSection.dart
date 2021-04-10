@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Home.dart';
 import 'package:flutter_app/Screen/diseasePage.dart';
-import 'package:flutter_app/model/response_mode.dart';
 import 'package:flutter_app/provider/providerclass.dart';
 import 'package:flutter_app/widgets/raisedIcon.dart';
 import 'package:provider/provider.dart';
