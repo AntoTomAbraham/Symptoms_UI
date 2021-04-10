@@ -9,13 +9,18 @@ import 'package:flutter_app/widgets/raisedIcon.dart';
 
 class DiseasePage extends StatelessWidget {
   List data;
-  DiseasePage({this.data});
+  List dataA;
+  DiseasePage({this.data, this.dataA});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(children: <Widget>[
         diseasepageAppbar(),
-        radioSection(),
+        radioSection(
+          data1: data[0],
+          data2: data[1],
+          data3: data[2],
+        ),
         Padding(
           padding: EdgeInsets.all(8.0),
           child: Container(
@@ -25,7 +30,11 @@ class DiseasePage extends StatelessWidget {
               ),
               child: diseasecomments()),
         ),
-        diseasebuttonSection(),
+        dataA == null
+            ? diseasebuttonSection()
+            : diseasebuttonSection(
+                d2: dataA,
+              ),
       ]),
     );
   }

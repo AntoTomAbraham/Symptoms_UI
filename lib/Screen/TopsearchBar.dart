@@ -96,6 +96,7 @@ class _TopsearchBarState extends State<TopsearchBar> {
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => DiseasePage(
                             data: vomiting,
+                            dataA: fatique,
                           ),
                         ));
                       } else if (s1 == 2) {
@@ -108,7 +109,9 @@ class _TopsearchBarState extends State<TopsearchBar> {
                             ));
                       } else if (s1 == 3) {
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => DiseasePage(),
+                          builder: (context) => DiseasePage(
+                            data: fatique,
+                          ),
                         ));
                       }
                     },
