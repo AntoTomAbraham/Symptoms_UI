@@ -1,0 +1,3 @@
+1.an attractive drawer with animation can be impemented
+2.Boxshadow can be given to the suggested symptoms innercontainers
+3.colour of the suggested symptoms innercontainers can be changed when it is selected

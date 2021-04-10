@@ -5,10 +5,19 @@ class Providerclass with ChangeNotifier {
   int sugg2 = 0;
   List fati = [0];
   List vomi = [0];
+
   void fatiIncre(int data) {
     fati.clear();
     fati.add(data);
     print(fati);
+    notifyListeners();
+  }
+
+  Map getresponse() {
+    return {
+      "fatique": fati[0],
+      "Vomit": vomi[0],
+    };
     notifyListeners();
   }
 

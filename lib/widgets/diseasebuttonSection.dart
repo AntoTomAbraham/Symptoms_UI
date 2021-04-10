@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Home.dart';
 import 'package:flutter_app/Screen/diseasePage.dart';
+import 'package:flutter_app/model/response_mode.dart';
+import 'package:flutter_app/provider/providerclass.dart';
 import 'package:flutter_app/widgets/raisedIcon.dart';
+import 'package:provider/provider.dart';
+import 'package:http/http.dart';
 
 class diseasebuttonSection extends StatelessWidget {
   List d2;
   diseasebuttonSection({this.d2});
+
   @override
   Widget build(BuildContext context) {
+    String url = "https://localhost:8080";
+    Future<String> makeRequest() async {
+      var response = http.post(Uri.encodeFull(url));
+    }
+
     return Container(
       height: 112,
       child: Row(
